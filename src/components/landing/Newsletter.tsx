@@ -1,3 +1,5 @@
+"use client";
+
 import { WaveDivider } from "@/components/WaveDivider";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
