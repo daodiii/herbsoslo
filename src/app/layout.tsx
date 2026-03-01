@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant, Jost } from "next/font/google";
+import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 
 const cormorant = Cormorant({
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="no" className={`${cormorant.variable} ${jost.variable}`}>
       <body className="bg-background text-foreground font-body antialiased">
+        <Navbar />
         {children}
       </body>
     </html>
