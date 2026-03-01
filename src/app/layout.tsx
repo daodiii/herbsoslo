@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant, Jost } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 const cormorant = Cormorant({
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className="bg-background text-foreground font-body antialiased">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

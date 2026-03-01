@@ -4,6 +4,7 @@ import { TrustBar } from "@/components/landing/TrustBar";
 import { FeaturedProducts } from "@/components/landing/FeaturedProducts";
 import { BrandStory } from "@/components/landing/BrandStory";
 import { CategoriesPreview } from "@/components/landing/CategoriesPreview";
+import { Newsletter } from "@/components/landing/Newsletter";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <FeaturedProducts />
       <BrandStory />
       <CategoriesPreview />
+      <Newsletter />
       <GrainOverlay />
     </main>
   );
