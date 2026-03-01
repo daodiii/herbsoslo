@@ -92,3 +92,9 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Focus indicators for accessibility (WCAG AA) */
+:focus-visible {
+  outline: 2px solid rgba(201, 168, 76, 0.6);
+  outline-offset: 2px;
+}

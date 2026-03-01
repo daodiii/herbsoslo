@@ -7,7 +7,7 @@ export function CategoriesPreview() {
     <section className="relative py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
         <ScrollReveal className="text-center mb-10">
-          <h2 className="font-heading text-3xl md:text-4xl text-foreground">
+          <h2 className="font-heading font-medium text-3xl md:text-4xl text-foreground">
             Browse by Category
           </h2>
         </ScrollReveal>

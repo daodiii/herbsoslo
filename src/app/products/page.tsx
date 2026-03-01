@@ -45,10 +45,10 @@ export default function ProductsPage() {
         <ScrollReveal className="mb-8">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-foreground">
+              <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-foreground">
                 Our Collection
               </h1>
-              <p className="font-body text-muted mt-2">
+              <p className="font-body font-light text-muted mt-2">
                 Premium natural supplements, carefully curated
               </p>
             </div>

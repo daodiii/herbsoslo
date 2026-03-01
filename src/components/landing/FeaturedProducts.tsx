@@ -1,5 +1,6 @@
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
+import { WaveDivider } from "@/components/WaveDivider";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export function FeaturedProducts() {
@@ -14,9 +15,10 @@ export function FeaturedProducts() {
 
   return (
     <section className="relative py-20 md:py-28">
+      <WaveDivider fill="rgba(27, 67, 50, 0.1)" className="absolute top-0 left-0 right-0" />
       <div className="max-w-7xl mx-auto px-6">
         <ScrollReveal className="text-center mb-14">
-          <h2 className="font-heading text-4xl md:text-5xl text-foreground">
+          <h2 className="font-heading font-semibold text-4xl md:text-5xl text-foreground">
             Curated for You
           </h2>
           <p className="font-body text-muted mt-3 max-w-md mx-auto">

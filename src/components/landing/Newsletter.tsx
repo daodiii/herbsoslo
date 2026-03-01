@@ -10,7 +10,7 @@ export function Newsletter() {
       <div className="bg-surface py-16 md:py-24">
         <div className="max-w-xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <h2 className="font-heading text-3xl md:text-4xl text-foreground">
+            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-foreground">
               Join the Apothecary
             </h2>
             <p className="font-body text-muted mt-3">
