@@ -46,15 +46,15 @@ export default function ProductsPage() {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
               <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-foreground">
-                Our Collection
+                Vår Kolleksjon
               </h1>
               <p className="font-body font-light text-muted mt-2">
-                Premium natural supplements, carefully curated
+                Premium naturlige kosttilskudd, nøye utvalgt
               </p>
             </div>
             <div className="glass rounded-full px-4 py-2 self-start sm:self-auto">
               <span className="font-body text-xs text-accent-gold">
-                {filtered.length} product{filtered.length !== 1 ? "s" : ""}
+                {filtered.length} produkt{filtered.length !== 1 ? "er" : ""}
               </span>
             </div>
           </div>
