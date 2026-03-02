@@ -32,13 +32,6 @@ const values = [
   },
 ];
 
-const stats = [
-  { value: "20+", label: "Premiumprodukter" },
-  { value: "5+", label: "Anerkjente merker" },
-  { value: "1000+", label: "Fornøyde kunder" },
-  { value: "100%", label: "Naturlig" },
-];
-
 const qualityPoints = [
   "Håndplukket fra verdens mest anerkjente produsenter",
   "Tredjepartstestet for renhet og styrke",
@@ -193,28 +186,6 @@ export default function OmOssPage() {
               </div>
             </ScrollReveal>
           </div>
-        </div>
-      </section>
-
-      {/* ── Stats ── */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-6">
-          <ScrollReveal>
-            <div className="glass rounded-[20px] p-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                {stats.map((stat) => (
-                  <div key={stat.label}>
-                    <p className="font-heading text-3xl md:text-4xl text-accent-gold">
-                      {stat.value}
-                    </p>
-                    <p className="font-body text-xs text-muted mt-1 uppercase tracking-wider">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 

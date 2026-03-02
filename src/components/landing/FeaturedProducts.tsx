@@ -34,7 +34,11 @@ export function FeaturedProducts() {
           )}
 
           {gridProducts.map((product, i) => (
-            <ScrollReveal key={product.id} delay={(i + 1) * 100}>
+            <ScrollReveal
+              key={product.id}
+              delay={(i + 1) * 100}
+              className={i >= 2 ? "hidden md:block" : ""}
+            >
               <ProductCard product={product} />
             </ScrollReveal>
           ))}

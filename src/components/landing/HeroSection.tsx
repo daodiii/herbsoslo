@@ -9,6 +9,13 @@ export function HeroSection() {
       <OrganicBlobs />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20 w-full grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+        {/* Mobile shipping badge — top */}
+        <div className="lg:hidden glass rounded-full px-5 py-2.5 inline-flex self-start">
+          <p className="font-body text-xs text-accent-gold tracking-wider">
+            Fri frakt over 1000 NOK
+          </p>
+        </div>
+
         {/* Left content — 3 cols */}
         <div className="lg:col-span-3 space-y-6">
           <p className="font-body text-sm text-muted uppercase tracking-[0.2em]">
@@ -61,12 +68,6 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Mobile shipping badge */}
-        <div className="lg:hidden glass rounded-full px-5 py-2.5 inline-flex self-start">
-          <p className="font-body text-xs text-accent-gold tracking-wider">
-            Fri frakt over 1000 NOK
-          </p>
-        </div>
       </div>
     </section>
   );
