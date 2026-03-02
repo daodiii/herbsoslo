@@ -19,9 +19,9 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Oslo Herbs — Nature's Most Powerful Remedies",
+  title: "Oslo Herbs — Naturens beste kosttilskudd",
   description:
-    "Premium natural supplements and alternative medicine. Curated herbs, adaptogens, mushroom extracts, and longevity compounds delivered across Norway.",
+    "Premium naturlige kosttilskudd og alternativ medisin. Håndplukkede urter, adaptogener, soppekstrakter og longevity-forbindelser levert over hele Norge.",
 };
 
 export default function RootLayout({

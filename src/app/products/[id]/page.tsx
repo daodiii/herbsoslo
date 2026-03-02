@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, ShoppingBag, ArrowLeft } from "lucide-react";
+import { Sparkles, ShoppingBag, ArrowLeft, ShieldCheck } from "lucide-react";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -86,63 +86,79 @@ export default async function ProductDetailPage({
           </Link>
         </div>
 
-        {/* ── B. Hero Image ── */}
-        <ScrollReveal className="mt-10 flex justify-center px-6">
-          <div className="relative w-full max-w-[400px] aspect-square rounded-[24px] overflow-hidden bg-[rgba(27,67,50,0.3)]">
-            {product.image ? (
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 768px) 90vw, 400px"
-              />
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-heading text-7xl text-primary opacity-30">
-                  {product.shortName.charAt(0)}
+        {/* ── B + C + D + G. Image + Product Info Side by Side ── */}
+        <ScrollReveal className="mt-10 max-w-5xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-start">
+            {/* Left: Hero Image */}
+            <div className="relative w-full md:w-1/2 max-w-[400px] mx-auto md:mx-0 aspect-square rounded-[24px] overflow-hidden bg-[rgba(27,67,50,0.3)] shrink-0">
+              {product.image ? (
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 90vw, 400px"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="font-heading text-7xl text-primary opacity-30">
+                    {product.shortName.charAt(0)}
+                  </span>
+                </div>
+              )}
+            </div>
+
+            {/* Right: Product Info + Buy Button */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2">
+              {/* Category badge */}
+              <span className="inline-block glass rounded-full px-4 py-1.5 font-body text-xs text-accent-gold uppercase tracking-wider">
+                {product.category}
+              </span>
+
+              {/* Short name as h1 */}
+              <h1 className="font-heading font-bold text-4xl md:text-5xl text-foreground mt-5 leading-tight">
+                {product.shortName}
+              </h1>
+
+              {/* Full name subtitle */}
+              <p className="font-body text-muted mt-2 text-base">
+                {product.name}
+              </p>
+
+              {/* Price */}
+              <p className="font-body text-accent-gold text-2xl font-medium mt-4">
+                {product.price},00 NOK
+              </p>
+
+              {/* Sold out badge */}
+              {product.soldOut && (
+                <span className="inline-block mt-3 bg-[rgba(239,68,68,0.2)] backdrop-blur-sm border border-[rgba(239,68,68,0.3)] rounded-full px-4 py-1.5 font-body text-sm text-red-400 uppercase tracking-wider">
+                  Utsolgt
                 </span>
-              </div>
-            )}
+              )}
+
+              {/* Short Description */}
+              <p className="font-body text-lg text-foreground/80 leading-relaxed mt-6">
+                {product.description}
+              </p>
+
+              {/* CTA Button */}
+              <button
+                disabled={product.soldOut}
+                className={`mt-8 inline-flex items-center gap-3 rounded-full px-8 py-4 font-body text-sm uppercase tracking-wider font-medium transition-colors cursor-pointer ${
+                  product.soldOut
+                    ? "bg-muted/20 text-muted cursor-not-allowed"
+                    : "bg-accent-gold/90 hover:bg-accent-gold text-background"
+                }`}
+              >
+                <ShoppingBag className="w-5 h-5" />
+                {product.soldOut
+                  ? `Utsolgt — ${product.price},00 NOK`
+                  : `Kjøp nå — ${product.price},00 NOK`}
+              </button>
+            </div>
           </div>
-        </ScrollReveal>
-
-        {/* ── C. Product Header ── */}
-        <ScrollReveal delay={100} className="mt-10 text-center px-6">
-          {/* Category badge */}
-          <span className="inline-block glass rounded-full px-4 py-1.5 font-body text-xs text-accent-gold uppercase tracking-wider">
-            {product.category}
-          </span>
-
-          {/* Short name as h1 */}
-          <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-foreground mt-5 leading-tight">
-            {product.shortName}
-          </h1>
-
-          {/* Full name subtitle */}
-          <p className="font-body text-muted mt-2 text-base">
-            {product.name}
-          </p>
-
-          {/* Price */}
-          <p className="font-body text-accent-gold text-2xl font-medium mt-4">
-            {product.price},00 NOK
-          </p>
-
-          {/* Sold out badge */}
-          {product.soldOut && (
-            <span className="inline-block mt-3 bg-[rgba(239,68,68,0.2)] backdrop-blur-sm border border-[rgba(239,68,68,0.3)] rounded-full px-4 py-1.5 font-body text-sm text-red-400 uppercase tracking-wider">
-              Utsolgt
-            </span>
-          )}
-        </ScrollReveal>
-
-        {/* ── D. Short Description ── */}
-        <ScrollReveal delay={150} className="mt-8 px-6">
-          <p className="font-body text-lg text-foreground/80 max-w-2xl mx-auto text-center leading-relaxed">
-            {product.description}
-          </p>
         </ScrollReveal>
 
         {/* ── E. Benefits Section ── */}
@@ -218,22 +234,61 @@ export default async function ProductDetailPage({
           </ScrollReveal>
         )}
 
-        {/* ── G. CTA Button ── */}
-        <ScrollReveal delay={250} className="flex justify-center px-6 pb-16">
-          <button
-            disabled={product.soldOut}
-            className={`inline-flex items-center gap-3 rounded-full px-8 py-4 font-body text-sm uppercase tracking-wider font-medium transition-colors cursor-pointer ${
-              product.soldOut
-                ? "bg-muted/20 text-muted cursor-not-allowed"
-                : "bg-accent-gold/90 hover:bg-accent-gold text-background"
-            }`}
-          >
-            <ShoppingBag className="w-5 h-5" />
-            {product.soldOut
-              ? `Utsolgt — ${product.price},00 NOK`
-              : `Kjøp nå — ${product.price},00 NOK`}
-          </button>
-        </ScrollReveal>
+        {/* ── F2. Certificates Section ── */}
+        {product.certificates && product.certificates.length > 0 && (
+          <div className="mt-4">
+            <WaveDivider fill="#111A16" />
+
+            <section className="bg-surface py-16 px-6">
+              <ScrollReveal className="max-w-5xl mx-auto">
+                <div className="flex items-center justify-center gap-3 mb-10">
+                  <ShieldCheck className="w-7 h-7 text-accent-gold" />
+                  <h2 className="font-heading font-semibold text-3xl md:text-4xl text-foreground text-center">
+                    Sertifikater
+                  </h2>
+                </div>
+
+                <p className="font-body text-muted text-center max-w-xl mx-auto mb-10 text-sm">
+                  Alle våre produkter leveres med dokumentasjon som bekrefter kvalitet, renhet og autentisitet.
+                </p>
+
+                <div className={`grid gap-5 ${
+                  product.certificates.length === 1
+                    ? "grid-cols-1 max-w-md mx-auto"
+                    : product.certificates.length === 2
+                      ? "grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto"
+                      : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                }`}>
+                  {product.certificates.map((cert, i) => (
+                    <ScrollReveal key={i} delay={100 + i * 75}>
+                      <a
+                        href={cert}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block glass rounded-2xl overflow-hidden hover:ring-2 hover:ring-accent-gold/40 transition-all group"
+                      >
+                        <div className="relative w-full aspect-[3/4]">
+                          <Image
+                            src={cert}
+                            alt={`Sertifikat ${i + 1} for ${product.shortName}`}
+                            fill
+                            className="object-contain p-3 group-hover:scale-[1.02] transition-transform duration-300"
+                            sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                          />
+                        </div>
+                      </a>
+                    </ScrollReveal>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </section>
+
+            <WaveDivider flip fill="#111A16" />
+          </div>
+        )}
+
+        {/* Spacer before related products */}
+        <div className="pb-16" />
 
         {/* ── H. Related Products ── */}
         {related.length > 0 && (

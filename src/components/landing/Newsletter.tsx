@@ -11,10 +11,10 @@ export function Newsletter() {
         <div className="max-w-xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="font-heading font-semibold text-3xl md:text-4xl text-foreground">
-              Join the Apothecary
+              Bli med i apoteket
             </h2>
             <p className="font-body text-muted mt-3">
-              Get early access to new arrivals and exclusive offers
+              Få tidlig tilgang til nyheter og eksklusive tilbud
             </p>
           </ScrollReveal>
 
@@ -22,15 +22,15 @@ export function Newsletter() {
             <form className="mt-8 flex flex-col sm:flex-row gap-3" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="email"
-                placeholder="your@email.com"
+                placeholder="din@epost.no"
                 className="flex-1 glass rounded-[20px] px-5 py-3.5 font-body text-sm text-foreground placeholder:text-muted bg-transparent outline-none focus:border-accent-gold transition-colors"
-                aria-label="Email address"
+                aria-label="E-postadresse"
               />
               <button
                 type="submit"
                 className="bg-accent-gold text-background font-body text-sm uppercase tracking-wider px-8 py-3.5 rounded-[20px] hover:bg-[#D4B355] transition-colors duration-200 cursor-pointer shrink-0"
               >
-                Subscribe
+                Abonner
               </button>
             </form>
           </ScrollReveal>

@@ -3,10 +3,10 @@ import { WaveDivider } from "@/components/WaveDivider";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const trustItems = [
-  { icon: Leaf, label: "100% Natural" },
-  { icon: FlaskConical, label: "Lab Tested" },
-  { icon: Truck, label: "Fast Shipping" },
-  { icon: ShieldCheck, label: "Trusted Brands" },
+  { icon: Leaf, label: "100% Naturlig" },
+  { icon: FlaskConical, label: "Labtestet" },
+  { icon: Truck, label: "Rask levering" },
+  { icon: ShieldCheck, label: "Anerkjente merker" },
 ];
 
 export function TrustBar() {

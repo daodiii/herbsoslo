@@ -9,10 +9,10 @@ import { OrganicBlobs } from "@/components/OrganicBlobs";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function ProductsPage() {
-  const [activeCategory, setActiveCategory] = useState<Category | "All">("All");
+  const [activeCategory, setActiveCategory] = useState<Category | "Alle">("Alle");
 
   const filtered =
-    activeCategory === "All"
+    activeCategory === "Alle"
       ? products
       : products.filter((p) => p.category === activeCategory);
 

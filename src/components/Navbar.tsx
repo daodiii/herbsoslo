@@ -5,10 +5,10 @@ import { ShoppingBag, Menu, X } from "lucide-react";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Hjem" },
+  { href: "/products", label: "Produkter" },
+  { href: "/om-oss", label: "Om oss" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 export function Navbar() {
@@ -50,7 +50,7 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <button
               className="relative text-foreground hover:text-accent-gold transition-colors duration-200 cursor-pointer"
-              aria-label="Shopping cart"
+              aria-label="Handlekurv"
             >
               <ShoppingBag size={20} />
               <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-accent-gold text-background text-[10px] font-body font-semibold rounded-full flex items-center justify-center">
@@ -61,7 +61,7 @@ export function Navbar() {
             <button
               className="md:hidden text-foreground hover:text-accent-gold transition-colors cursor-pointer"
               onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-label={mobileOpen ? "Lukk meny" : "Åpne meny"}
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>

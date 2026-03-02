@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const footerLinks = [
-  { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Hjem" },
+  { href: "/products", label: "Produkter" },
+  { href: "/om-oss", label: "Om oss" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 export function Footer() {
@@ -16,7 +16,7 @@ export function Footer() {
             <Link href="/" className="font-heading text-xl text-foreground cursor-pointer">
               OSLOHERBS
             </Link>
-            <p className="font-body text-xs text-muted mt-1">Powered by Nature</p>
+            <p className="font-body text-xs text-muted mt-1">Drevet av naturen</p>
           </div>
 
           <div className="flex gap-6">
@@ -45,7 +45,7 @@ export function Footer() {
 
         <div className="mt-8 pt-6 border-t border-[rgba(201,168,76,0.05)] text-center">
           <p className="font-body text-xs text-muted">
-            &copy; {new Date().getFullYear()} Oslo Herbs. All rights reserved.
+            &copy; {new Date().getFullYear()} Oslo Herbs. Alle rettigheter reservert.
           </p>
         </div>
       </div>

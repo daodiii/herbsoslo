@@ -1,9 +1,9 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const stats = [
-  { value: "20+", label: "Premium Products" },
-  { value: "5+", label: "Trusted Brands" },
-  { value: "1000+", label: "Happy Customers" },
+  { value: "20+", label: "Premiumprodukter" },
+  { value: "5+", label: "Anerkjente merker" },
+  { value: "1000+", label: "Fornøyde kunder" },
 ];
 
 export function BrandStory() {
@@ -16,7 +16,7 @@ export function BrandStory() {
               <div className="absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(27,67,50,0.4),transparent_70%)]" aria-hidden="true" />
               <blockquote className="relative text-center px-8">
                 <p className="font-heading italic text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed">
-                  &ldquo;We believe nature holds the answer&rdquo;
+                  &ldquo;Vi tror naturen har svaret&rdquo;
                 </p>
               </blockquote>
             </div>
@@ -25,13 +25,13 @@ export function BrandStory() {
           <div className="space-y-8">
             <ScrollReveal>
               <h2 className="font-heading font-semibold text-3xl md:text-4xl text-foreground">
-                The Oslo Herbs Philosophy
+                Oslo Herbs-filosofien
               </h2>
               <p className="font-body text-muted mt-4 leading-relaxed max-w-lg">
-                We curate only the highest-quality natural supplements from
-                trusted brands worldwide. Every product in our collection is
-                selected for purity, potency, and scientific backing — because
-                your health deserves nothing less.
+                Vi velger kun naturlige kosttilskudd av høyeste kvalitet fra
+                anerkjente merker verden over. Hvert produkt i vår kolleksjon er
+                valgt ut for renhet, styrke og vitenskapelig grunnlag — fordi
+                helsen din fortjener det beste.
               </p>
             </ScrollReveal>
 

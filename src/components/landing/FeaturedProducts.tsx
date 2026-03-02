@@ -19,10 +19,10 @@ export function FeaturedProducts() {
       <div className="max-w-7xl mx-auto px-6">
         <ScrollReveal className="text-center mb-14">
           <h2 className="font-heading font-semibold text-4xl md:text-5xl text-foreground">
-            Curated for You
+            Håndplukket for deg
           </h2>
           <p className="font-body text-muted mt-3 max-w-md mx-auto">
-            Our most popular natural supplements
+            Våre mest populære naturlige kosttilskudd
           </p>
         </ScrollReveal>
 

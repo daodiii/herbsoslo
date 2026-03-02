@@ -3,12 +3,12 @@
 import { categories, type Category } from "@/data/products";
 
 interface FilterBarProps {
-  active: Category | "All";
-  onChange: (category: Category | "All") => void;
+  active: Category | "Alle";
+  onChange: (category: Category | "Alle") => void;
 }
 
 export function FilterBar({ active, onChange }: FilterBarProps) {
-  const allCategories: (Category | "All")[] = ["All", ...categories];
+  const allCategories: (Category | "Alle")[] = ["Alle", ...categories];
 
   return (
     <div className="sticky top-20 z-30 py-4">
